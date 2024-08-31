@@ -1,4 +1,3 @@
-
 import { prisma } from '../config/prisma'
 import { Request, Response } from 'express'
 import { GetProduct } from 'src/DTO/getproduct';
