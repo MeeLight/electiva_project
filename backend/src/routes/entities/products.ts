@@ -2,8 +2,9 @@ import { Router } from 'express'
 import ProductController from '@controllers/product.controller'
 
 const router = Router()
-const productController = new ProductController()
+const controller = new ProductController()
 
-router.get('/', productController.getProducts)
+router.get('/', controller.getProduct)
+router.put('/', controller.getProduct)
 
 export { router }
