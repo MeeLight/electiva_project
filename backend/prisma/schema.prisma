@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Producto {
+  codigo      String    @id @unique @db.VarChar(8)
+  nombre      String    @db.VarChar(100)
+  descripcion String    @db.Text
+  cantidad    Int
+  stockmax    Int
+  stockmin    Int
+  precio      Float
+  categoria   Categoria @relation(fields: [codcat], references: [coocat])
+  codcat      String    @unique @db.VarChar(4)
+}
+
+model Categoria {
+  coocat      String     @id @unique @db.VarChar(4)
+  descripcion String     @db.VarChar(50)
+  productos   Producto[]
+}

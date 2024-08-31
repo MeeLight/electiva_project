@@ -10,10 +10,10 @@
     "paths": {
       "@routes/*": ["./src/routes/*"],
       "@controllers/*": ["./src/controllers/*"],
-      "@models/*": ["./src/models/*"],
       "@helpers/*": ["./src/helpers/*"],
       "@middlewares/*": ["./src/middlewares/*"],
-      "@database/*": ["./src/database/*"],
+      "@config/*": ["./src/config/*"],
+      "@services/*": ["./src/services/*"],
       "@interfaces/*": ["./src/interfaces/*"]
     },
     "rootDirs": [],

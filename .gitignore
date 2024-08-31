@@ -26,6 +26,7 @@ dist
 # Custom
 .vscode
 backend/.vscode
+backend/.editorconfig
 backend/.env
 backend/.prettierrc.json
 backend/.prettierignore
