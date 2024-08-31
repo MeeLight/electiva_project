@@ -1,16 +1,10 @@
-import { Router, type Request, type Response } from 'express'
-import { PrismaClient } from '@prisma/client'
+import { Router } from 'express'
+import CategoryController from '@controllers/category.controller'
 
-// Controllers
-// import { categoryController } from '@controllers/category.controller'
+const controller = new CategoryController()
 
 const router = Router()
-const prismaClient = new PrismaClient()
 
-router.get('/', async (_: Request, res: Response) => {
-  const categories = await prismaClient.categoria.findMany()
-
-  res.status(200).json(categories)
-})
-
+router.get('/', controller.getcategory);
+router.put('/', controller.UpdateCategory);
 export { router }

@@ -1,16 +1,11 @@
-import { Router, type Request, type Response } from 'express'
-import { PrismaClient } from '@prisma/client'
+import { Router } from 'express'
+import ProductController from '@controllers/product.controller'
 
 // Controllers
 // import { productController } from '@controllers/product.controller'
-
+const controller = new ProductController()
 const router = Router()
-const prismaClient = new PrismaClient()
 
-router.get('/', async (_: Request, res: Response) => {
-  const products = await prismaClient.producto.findMany()
-
-  res.status(200).json(products)
-})
-
+router.get('/', controller.getProduct)
+router.put('/', controller.getProduct)
 export { router }
