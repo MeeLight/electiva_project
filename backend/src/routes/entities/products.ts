@@ -5,6 +5,6 @@ const router = Router()
 const controller = new ProductController()
 
 router.get('/', controller.getProduct)
-router.put('/', controller.getProduct)
+router.patch('/', controller.updateProduct)
 
 export { router }

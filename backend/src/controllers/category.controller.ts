@@ -5,7 +5,7 @@ import { GetCategory } from 'src/DTO/getcategory';
 
 
 export default class CategoryController {
-    async getcategory(req: Request, res: Response) {
+    async getCategory(req: Request, res: Response) {
         try {
             const dto = GetCategory.create(req.query);
             const categories = await prisma.categoria.findMany({
@@ -22,7 +22,7 @@ export default class CategoryController {
             res.status(500).json({ message: 'Server Internal Serror' })
         }
     }
-    async UpdateCategory(req: Request, res: Response) {
+    async updateCategory(req: Request, res: Response) {
         try {
             const dto = Category.create(req.body);
             const result = prisma.categoria.update({where: {coocat: dto.coocat}, data: dto})

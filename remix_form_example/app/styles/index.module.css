@@ -1,8 +1,10 @@
 .main {
-  height: calc(100vh - 3.75rem);
+  margin: 3rem 0;
+  height: max-content;
   width: 100vw;
   display: grid;
   place-content: center;
+  place-items: center;
 }
 
 :is(.form, .input, .button) {
@@ -14,7 +16,7 @@
 
 .form {
   min-height: 5rem;
-  height: 28rem;
+  height: 35rem;
   width: 35rem;
   padding: 2.25rem 0;
   display: flex;
@@ -165,7 +167,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 .input[type=number] {
   width: 5.2rem;
 }
-.input[name=product_price] {
+.input[name=price] {
   text-align: end;
 }
 

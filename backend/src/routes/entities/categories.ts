@@ -4,7 +4,7 @@ import CategoryController from '@controllers/category.controller'
 const router = Router()
 const controller = new CategoryController()
 
-router.get('/', controller.getcategory)
-router.put('/', controller.UpdateCategory)
+router.get('/', controller.getCategory)
+router.patch('/', controller.updateCategory)
 
 export { router }

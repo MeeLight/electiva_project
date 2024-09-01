@@ -1,11 +1,11 @@
 export class GetProduct {
   private constructor(
-    public readonly coocat?: string,
+    public readonly codcat?: string,
     public readonly codigo?: string
   ) {}
 
   static create(props: { [key: string]: any }): GetProduct {
-    let { coocat, codigo } = props
-    return new GetProduct(coocat, codigo)
+    let { codcat, codigo } = props
+    return new GetProduct(codcat, codigo)
   }
 }

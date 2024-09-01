@@ -14,7 +14,8 @@ export default defineConfig({
     remix({
       routes(defineRoutes) {
         return defineRoutes(route => {
-          route('/', './routes/_index.tsx', { index: true })
+          route('/', './routes/_index.tsx', { index: true }),
+          route('/product', './routes/product.$code.tsx', { index: false })
         })
       }
     })

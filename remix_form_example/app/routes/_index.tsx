@@ -57,13 +57,13 @@ export default function Index() {
       >
         <h3 className={styles.formTitle}>Update Product</h3>
 
-        <div data-title='Product ID' className={styles.field}>
+        <div data-title='Product Code' className={styles.field}>
           <input
             type='text'
             name='product_code'
             className={styles.input}
             id='product_code'
-            maxLength={100}
+            maxLength={8}
             value='PR000000'
             disabled
             required
@@ -71,7 +71,7 @@ export default function Index() {
           <label
             htmlFor='product_code'
             className={styles.label}
-            data-title='ID'
+            data-title='Code'
           ></label>
         </div>
 

@@ -5,14 +5,14 @@ export class Product{
         public readonly descripcion:         string,
         public readonly cantidad:         number,
         public readonly stockmax:         number,
-        public readonly srockmin:         number,
+        public readonly stockmin:         number,
         public readonly precio:         number,
-        public readonly coocat:         string,
+        public readonly codcat:         string,
     ){}
 
     static create(props: { [key: string]: any }): Product {
-        let { codigo,nombre,descripcion,cantidad,stockmax, srockmin,precio,coocat } = props;
-        return new Product(codigo,nombre,descripcion,cantidad,stockmax, srockmin,precio,coocat);
+        let { codigo,nombre,descripcion,cantidad,stockmax, stockmin,precio,codcat } = props;
+        return new Product(codigo,nombre,descripcion,cantidad,stockmax, stockmin,precio,codcat);
     }
 
 
