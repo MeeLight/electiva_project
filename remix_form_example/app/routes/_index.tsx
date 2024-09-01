@@ -31,7 +31,7 @@ export default function Index() {
       quantity: formData.get('product_quantity'),
       stockMin: formData.get('product_stockmin'),
       stockMax: formData.get('product_stockmax'),
-      price: formData.get('product_price')
+      price: price
     }
 
     try {
