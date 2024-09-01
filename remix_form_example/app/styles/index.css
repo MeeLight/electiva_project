@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+:root {
+  --light: #c4caca;
+  --dark: #1d1e24;
+  --blue: #2121ab;
+  --light_bg: #ffffff;
+  --dark_bg: #1e1e23;
+  --selection_color: #d3d8dd;
+  --dark-selection_color: #2a2a2e;
+  --rounded-sm: 0.375rem;
+  --main_font: 'Open Sans', sans-serif;
+}
+
+::selection {
+  background-color: var(--selection_color);
+  color: inherit;
+}
+
+/**
+ * (Opcional)  Desactivamos los animations en el
+ * caso de que el usuario haya configurado el modo
+ * sin animation.
+ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+*::before,
+*::after {
+  display: block;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  appearance: none;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  display: block;
+}
+
+/* Para ocultar la flecha de los elemento que se colapsan */
+input::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  font-size: 16px;
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 50rem;
+  font-family: var(--main_font);
+  background-color: var(--light_bg);
+  color: var(--dark);
+  font-size: 100%;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+  line-height: 1.25;
+  hyphens: auto;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}

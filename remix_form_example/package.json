@@ -1,0 +1,46 @@
+{
+  "name": "remix_crud",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "sideEffects": false,
+  "author": "Moises Reyes (MeeLight)",
+  "scripts": {
+    "dev": "node ./server.mjs",
+    "build": "remix vite:build",
+    "start": "cross-env NODE_ENV=production node ./server.mjs",
+    "typecheck": "tsc"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@remix-run/express": "2.11.2",
+    "@remix-run/node": "2.11.2",
+    "@remix-run/react": "2.11.2",
+    "cors": "2.8.5",
+    "cross-env": "7.0.3",
+    "dotenv": "16.4.5",
+    "express": "4.19.2",
+    "isbot": "4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "2.11.2",
+    "@types/cors": "2.8.17",
+    "@types/express": "4.17.21",
+    "@types/morgan": "1.9.9",
+    "@types/node": "22.5.1",
+    "@types/react": "18.3.5",
+    "@types/react-dom": "18.3.0",
+    "morgan": "1.10.0",
+    "rimraf": "6.0.1",
+    "tsc-alias": "1.8.10",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "5.5.4",
+    "vite": "5.4.2",
+    "vite-tsconfig-paths": "5.0.1"
+  }
+}

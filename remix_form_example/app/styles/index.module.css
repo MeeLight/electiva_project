@@ -1,0 +1,178 @@
+.main {
+  height: calc(100vh - 3.75rem);
+  width: 100vw;
+  display: grid;
+  place-content: center;
+}
+
+:is(.form, .input, .button) {
+  border-radius: 0.4rem;
+  outline-width: 1px;
+  outline-style: solid;
+  outline-color: var(--dark);
+}
+
+.form {
+  min-height: 5rem;
+  height: 28rem;
+  width: 35rem;
+  padding: 2.25rem 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  outline-width: 2px;
+  border-radius: 0.25rem;
+  outline-color: var(--light);
+}
+
+.formTitle {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.7em;
+  margin: 0 0 1.5rem 0;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  user-select: none;
+}
+
+@media (max-width: 550px) {
+  .form {
+    width: calc(100vw - 20vw);
+  }
+}
+
+@media (max-width: 300px) {
+  .input {
+    width: calc(100vw - 50vw);
+  }
+}
+
+.button {
+  outline: none;
+  padding: 0.5rem 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  user-select: none;
+  transition: background-color 600ms ease-in-out;
+}
+.button:hover {
+  background-color: #535359;
+}
+.button svg {
+  transition:
+    transform 800ms ease-in-out,
+    scale 800ms ease-in-out;
+}
+.button:hover svg {
+  transform: rotate(90deg);
+  scale: 1.1;
+}
+
+.label::before {
+  content: attr(data-title);
+  position: absolute;
+  top: 0.8rem;
+  left: 0.9375rem;
+  font-size: 0.875rem;
+  color: var(--dark);
+  transition: all 250ms;
+  cursor: text;
+  pointer-events: none;
+}
+
+.field {
+  /* outline: 1px solid black; */
+  position: relative;
+  margin-bottom: 0.9375rem;
+}
+
+.input {
+  height: 2.75rem;
+  /* width: calc(35rem - 16rem); */
+  width: calc(35rem - 12.5rem);
+  padding: 0 0.9375rem;
+  font-size: 1rem;
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: var(--light);
+  border-radius: 0.4rem;
+  margin: 0 auto;
+}
+
+textarea {
+  height: 5rem !important;
+  resize: none;
+  padding-block: 0.5rem !important;
+  letter-spacing: 0.2px;
+  word-spacing: 0.18rem;
+}
+textarea::-webkit-scrollbar {
+  width: 0.7rem;
+  background-color: rgb(238, 238, 240);
+}
+textarea::-webkit-scrollbar-thumb {
+  width: 0.7rem;
+  border-radius: 1rem;
+  background-color: rgb(228, 228, 230);
+  cursor: grab;
+  transition: background-color 800ms ease-in-out;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(196, 196, 196);
+}
+
+.input:focus {
+  outline-color: var(--light);
+}
+.input:valid + label::before {
+  content: attr(data-title);
+  line-height: 1.25rem;
+  font-size: 12px;
+  top: -0.75rem;
+  background: #ffffff;
+  padding: 0 6px;
+  left: 0.75rem;
+}
+.input:focus + label::before {
+  line-height: 1.25rem;
+  font-size: 0.75rem;
+  top: -0.75rem;
+  background: #ffffff;
+  padding: 0 6px;
+  left: 0.75rem;
+  color: var(--dark);
+}
+
+.input[disabled] {
+  color: #8f9090;
+}
+.input[disabled] + label::before {
+  line-height: 1.25rem;
+  font-size: 0.75rem;
+  top: -0.75rem;
+  background: #ffffff;
+  padding: 0 6px;
+  left: 0.75rem;
+  color: #8f9090;
+}
+.input[type=number] {
+  width: 5.2rem;
+}
+.input[name=product_price] {
+  text-align: end;
+}
+
+.inputsGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 80%;
+}

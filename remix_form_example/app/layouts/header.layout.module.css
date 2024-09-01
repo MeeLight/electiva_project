@@ -1,0 +1,17 @@
+.header {
+  height: 3.75rem;
+  width: 100vw;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0 0 0 2.5rem;
+  gap: 1.2rem;
+}
+
+.title {
+  font-size: 1.4em;
+  font-weight: 600;
+  user-select: none;
+}

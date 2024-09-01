@@ -8,5 +8,5 @@
  * console.log(filename) // 'index'
  */
 export const getFilenameWithoutExtension = (filename: string): string => {
-  return filename.split('.').shift()!
+  return <string>filename.split('.').shift()
 }
