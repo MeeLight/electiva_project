@@ -179,3 +179,57 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+
+:is(.button, .buttonDisabled) {
+  border-radius: 0.4rem;
+  outline-width: 1px;
+  outline-style: solid;
+  outline-color: var(--dark);
+}
+
+.button,
+.buttonDisabled {
+  padding: 0.5rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  user-select: none;
+  transition: background-color 600ms ease-in-out;
+}
+
+.button {
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: var(--dark);
+}
+.button:hover {
+  background-color: #535359;
+}
+.buttonDisabled {
+  color: #eaebed;
+  background-color: #bfc0c2;
+  outline-color: rgb(179, 179, 179);
+  cursor: not-allowed;
+}
+.buttonDisabled:hover {
+  background-color: #cad0d0;
+}
+.buttonDisabled svg {
+  fill: #eaebed;
+}
+
+.button svg {
+  transition: transform 800ms ease-in-out, scale 800ms ease-in-out;
+}
+
+.buttonDisabled svg {
+  transition: none;
+}
+.button:hover svg {
+  transform: rotate(90deg);
+  scale: 1.1;
+}
+.buttonDisabled:hover svg {
+  transform: none;
+}

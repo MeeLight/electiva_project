@@ -8,7 +8,8 @@
   "author": "Moises Reyes (MeeLight)",
   "scripts": {
     "dev": "node ./server.mjs",
-    "build": "remix vite:build",
+    "build": "remix vite:build & pnpm build:clean",
+    "build:clean": "cd ./build/client & rmdir screenshots /s & cd ./../..",
     "start": "cross-env NODE_ENV=production node ./server.mjs",
     "typecheck": "tsc"
   },

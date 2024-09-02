@@ -23,6 +23,7 @@ import { isDecimal } from '~/helpers/isDecimal'
 import styles from '~/styles/index.module.css'
 
 export default function Index() {
+  const FIVE_SECONDS = 5000
   const [searchParams] = useSearchParams()
 
   const defaultValuesOfFields: ProductFormInterface = {
@@ -109,12 +110,22 @@ export default function Index() {
 
   // Initial
   useEffect(() => {
+    const submitBtn = document.querySelector('button[type="submit"]')
+    submitBtn?.classList.add('button')
+
     if (state.code === '') {
-      throw new Error('Oops! The parameter "codigo" was expected with a value.')
+      document.querySelector('form')!.style.display = 'none'
+      const ONE_MINUTE = 60000
+
+      toast.error('Oops! The parameter "codigo" was expected with a value.', {
+        duration: ONE_MINUTE
+      })
     }
 
-    fetchProduct()
-    fetchCategories()
+    if (searchParams.get('codigo') !== '') {
+      fetchProduct()
+      fetchCategories()
+    }
   }, [])
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -151,11 +162,21 @@ export default function Index() {
       )
 
       const dataOfServer: ProductFetchInterface = await res.json()
-      const FIVE_SECONDS = 5000
 
       toast.success('The product has been successfully updated!', {
         duration: FIVE_SECONDS
       })
+
+      const submitBtn = document.querySelector('button[type="submit"]')
+      submitBtn?.classList.remove('button')
+      submitBtn?.classList.add('buttonDisabled')
+      submitBtn?.setAttribute('disabled', '')
+
+      setTimeout(() => {
+        submitBtn?.removeAttribute('disabled')
+        submitBtn?.classList.remove('buttonDisabled')
+        submitBtn?.classList.add('button')
+      }, FIVE_SECONDS)
 
       setState({
         ...state,
@@ -314,7 +335,7 @@ export default function Index() {
 
         <div data-title='Product Category' className={styles.field}>
           <select
-            name='category'
+            name='categoryCode'
             id='product_category'
             onChange={handleField}
             value={state.categoryCode}
@@ -337,7 +358,7 @@ export default function Index() {
           ></label>
         </div>
 
-        <button type='submit' className={styles.button}>
+        <button type='submit'>
           <UpdateIcon height='25' width='25' fill='rgba(255, 255, 255, 0.8)' />
           Update
         </button>

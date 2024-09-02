@@ -7,7 +7,7 @@
   place-items: center;
 }
 
-:is(.form, .input, .button) {
+:is(.form, .input) {
   border-radius: 0.4rem;
   outline-width: 1px;
   outline-style: solid;
@@ -50,31 +50,6 @@
   .input {
     width: calc(100vw - 50vw);
   }
-}
-
-.button {
-  outline: none;
-  padding: 0.5rem 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: var(--dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  user-select: none;
-  transition: background-color 600ms ease-in-out;
-}
-.button:hover {
-  background-color: #535359;
-}
-.button svg {
-  transition:
-    transform 800ms ease-in-out,
-    scale 800ms ease-in-out;
-}
-.button:hover svg {
-  transform: rotate(90deg);
-  scale: 1.1;
 }
 
 .label::before {
@@ -164,10 +139,10 @@ textarea::-webkit-scrollbar-thumb:hover {
   left: 0.75rem;
   color: #8f9090;
 }
-.input[type=number] {
+.input[type='number'] {
   width: 5.2rem;
 }
-.input[name=price] {
+.input[name='price'] {
   text-align: end;
 }
 
